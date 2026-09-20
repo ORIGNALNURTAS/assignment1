@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Барлау корпусы жазбалары — Кесте және байланыс</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-head">
+    <div class="masthead">
+      <p class="brand">Барлау корпусы жазбалары</p>
+      <p class="tagline">«Shingeki no Kyojin» әлемі бойынша жанкүйер сайты</p>
+    </div>
+  </header>
+
+  <nav class="mainnav">
+    <ul>
+      <li><a href="index.html">Басты бет</a></li>
+      <li><a href="about.html">Аниме туралы</a></li>
+      <li><a href="contact.html" class="active">Кесте және байланыс</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <h1>Кесте және байланыс</h1>
+
+    <section>
+      <h2>Маусымдар кестесі</h2>
+      <p>Төмендегі кестеде сериалдың барлық маусымдары эпизод саны, жылы, студиясы және MyAnimeList бағасымен келтірілген.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>«Shingeki no Kyojin» маусымдары бойынша салыстыру</caption>
+          <thead>
+            <tr>
+              <th scope="col">Маусым</th>
+              <th scope="col">Бөлім</th>
+              <th scope="col">Эпизод саны</th>
+              <th scope="col">Жылы</th>
+              <th scope="col">Студия</th>
+              <th scope="col">MAL бағасы</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1-маусым</th>
+              <td>—</td>
+              <td>25</td>
+              <td>2013</td>
+              <td>WIT Studio</td>
+              <td>8.50</td>
+            </tr>
+            <tr>
+              <th scope="row">2-маусым</th>
+              <td>—</td>
+              <td>12</td>
+              <td>2017</td>
+              <td>WIT Studio</td>
+              <td>8.52</td>
+            </tr>
+            <tr>
+              <th scope="row">3-маусым</th>
+              <td>—</td>
+              <td>22</td>
+              <td>2018–2019</td>
+              <td>WIT Studio</td>
+              <td>8.83</td>
+            </tr>
+            <tr>
+              <th scope="rowgroup" rowspan="2">Соңғы маусым</th>
+              <td>1-бөлім</td>
+              <td>16</td>
+              <td>2020–2021</td>
+              <td>MAPPA</td>
+              <td>8.48</td>
+            </tr>
+            <tr>
+              <td>2–3-бөлім + финал</td>
+              <td>28</td>
+              <td>2022–2023</td>
+              <td>MAPPA</td>
+              <td>9.05</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Барлығы</td>
+              <td>103</td>
+              <td colspan="3">2013–2023</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Пікір қалдыру формасы</h2>
+      <p>Сайт туралы пікіріңізді немесе сұрағыңызды қалдырыңыз. Бұл форма деректерді нақты серверге жібермейді — тек оқу мақсатында жасалған.</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Жеке мәліметтер</legend>
+
+          <div class="field">
+            <label for="fullname">Есіміңіз</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Мысалы: Нұртас" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email мекенжайы</label>
+            <input type="email" id="email" name="email" placeholder="sizdin@email.com" required>
+          </div>
+
+          <div class="field">
+            <label for="age">Жасыңыз</label>
+            <input type="number" id="age" name="age" min="10" max="99">
+          </div>
+
+          <div class="field">
+            <label for="birthdate">Туған күніңіз</label>
+            <input type="date" id="birthdate" name="birthdate">
+          </div>
+
+          <div class="field">
+            <label for="favcolor">Сүйікті түсіңіз</label>
+            <input type="color" id="favcolor" name="favcolor" value="#8c1f28">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Аниме туралы пікір</legend>
+
+          <div class="field">
+            <p id="season-label" style="font-family: var(--font-display); font-size: 0.9rem; margin: 0 0 0.5em;">Сүйікті маусымыңыз</p>
+            <div class="radio-group" role="group" aria-labelledby="season-label">
+              <span class="field-inline">
+                <input type="radio" id="season1" name="season" value="1">
+                <label for="season1">1-маусым</label>
+              </span>
+              <span class="field-inline">
+                <input type="radio" id="season2" name="season" value="2">
+                <label for="season2">2-маусым</label>
+              </span>
+              <span class="field-inline">
+                <input type="radio" id="season3" name="season" value="3">
+                <label for="season3">3-маусым</label>
+              </span>
+              <span class="field-inline">
+                <input type="radio" id="season4" name="season" value="4">
+                <label for="season4">Соңғы маусым</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="field field-inline">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Жаңа жазбалар туралы хабарлама алғым келеді</label>
+          </div>
+
+          <div class="field">
+            <label for="message">Пікіріңіз</label>
+            <textarea id="message" name="message" maxlength="500" placeholder="Пікіріңізді осында жазыңыз (максимум 500 таңба)"></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit">Жіберу</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <p>&copy; 2026 Нұртас. Assignment 1 — HTML &amp; CSS Basics.</p>
+  </footer>
+
+</body>
+</html>
