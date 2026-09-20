@@ -1,0 +1,366 @@
+/* =========================================================
+   Assignment 1 — Survey Corps Field Log
+   Color system (documented in 3 formats, see report):
+     charcoal:  #1B1B1F   rgb(27,27,31)
+     parchment: #E8DFC8   hsl(45,38%,84%)
+     bone:      #F2EFE9   rgb(242,239,233)
+     oxide-red: #8C1F28   hsl(355,64%,35%)
+     khaki:     #6B705C   rgb(107,112,92)
+   Units in play: rem (type scale), em (component padding),
+   %  (layout widths), px (hairline borders), vh (hero height)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Literata:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --charcoal: #1B1B1F;
+  --parchment: #E8DFC8;
+  --bone: #F2EFE9;
+  --oxide: #8C1F28;
+  --khaki: #6B705C;
+  --ink: #2B2B2F;
+  --rule: rgba(27, 27, 31, 0.18);
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Literata', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bone);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--oxide); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--oxide);
+  outline-offset: 2px;
+}
+
+/* ---------- Header & Nav ---------- */
+header.site-head {
+  background: var(--charcoal);
+  color: var(--bone);
+  padding: 1.6em 6%;
+  border-bottom: 6px solid var(--oxide);
+}
+
+.site-head .masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4em 1.5em;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-head .brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.9rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.site-head .tagline {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--parchment);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+nav.mainnav {
+  background: #101013;
+  padding: 0 6%;
+}
+
+nav.mainnav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+nav.mainnav a {
+  display: inline-block;
+  color: var(--parchment);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  padding: 0.85em 1.1em;
+  border-bottom: 3px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+nav.mainnav a:hover {
+  background: rgba(140, 31, 40, 0.25);
+  border-bottom-color: var(--oxide);
+  text-decoration: none;
+}
+
+nav.mainnav a.active {
+  border-bottom-color: var(--khaki);
+  color: #fff;
+}
+
+/* ---------- Layout shell ---------- */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3em 6% 4em;
+}
+
+main > section + section {
+  margin-top: 3em;
+  padding-top: 2.4em;
+  border-top: 1px solid var(--rule);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--charcoal);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-left: 6px solid var(--oxide);
+  padding-left: 0.5em;
+  margin-bottom: 0.6em;
+}
+
+h3 { font-size: 1.15rem; color: var(--oxide); }
+
+p { max-width: 68ch; }
+
+ul, ol { max-width: 68ch; padding-left: 1.4em; }
+li { margin-bottom: 0.35em; }
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+  color: var(--bone);
+  background: var(--charcoal);
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.hero .hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 2em 6%;
+  background: linear-gradient(0deg, rgba(16,16,19,0.92) 15%, transparent 100%);
+  width: 100%;
+}
+
+.hero .hero-copy h2 {
+  border: none;
+  padding: 0;
+  color: var(--bone);
+  font-size: 2rem;
+  max-width: 20ch;
+}
+
+/* ---------- Figure / blockquote ---------- */
+figure {
+  margin: 1.5em 0;
+  border: 1px solid var(--rule);
+  padding: 0.6em;
+  background: #fff;
+}
+
+figcaption {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--khaki);
+  padding-top: 0.5em;
+}
+
+blockquote {
+  margin: 1.5em 0;
+  padding: 0.4em 1.2em;
+  border-left: 4px solid var(--khaki);
+  font-style: italic;
+  color: var(--charcoal);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.5em;
+  font-style: normal;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--khaki);
+}
+
+.media-wrap {
+  margin: 1.5em 0;
+  border: 1px solid var(--rule);
+  padding: 0.6em;
+  background: #fff;
+}
+
+.media-wrap iframe,
+.media-wrap video,
+.media-wrap audio { width: 100%; }
+
+.media-wrap p.label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--khaki);
+  margin: 0.5em 0 0;
+}
+
+/* ---------- Table ---------- */
+.table-wrap { overflow-x: auto; margin: 1.5em 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 560px;
+  font-family: var(--font-body);
+  background: #fff;
+}
+
+caption {
+  text-align: left;
+  font-family: var(--font-display);
+  color: var(--charcoal);
+  margin-bottom: 0.5em;
+  font-size: 1.05rem;
+}
+
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.65em 0.8em;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+thead th {
+  background: var(--charcoal);
+  color: var(--bone);
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+tbody tr:nth-child(even) { background: rgba(107, 112, 92, 0.08); }
+
+tfoot td {
+  background: var(--parchment);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+}
+
+/* ---------- Form ---------- */
+form {
+  background: #fff;
+  border: 1px solid var(--rule);
+  padding: 1.6em;
+  max-width: 640px;
+}
+
+fieldset {
+  border: 1px solid var(--rule);
+  padding: 1.2em;
+  margin: 0 0 1.4em;
+}
+
+legend {
+  font-family: var(--font-display);
+  color: var(--oxide);
+  padding: 0 0.5em;
+}
+
+.field {
+  margin-bottom: 1.1em;
+}
+
+.field label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  margin-bottom: 0.35em;
+  color: var(--charcoal);
+}
+
+.field-inline { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.6em; }
+.field-inline label { margin: 0; font-family: var(--font-body); }
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.6em 0.7em;
+  border: 1px solid var(--khaki);
+  background: var(--bone);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] { width: auto; }
+
+textarea { min-height: 6em; resize: vertical; }
+
+.radio-group { display: flex; gap: 1.2em; flex-wrap: wrap; }
+
+button.submit {
+  font-family: var(--font-display);
+  background: var(--oxide);
+  color: #fff;
+  border: none;
+  padding: 0.75em 1.6em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+button.submit:hover { background: #6f1720; }
+
+/* ---------- Footer ---------- */
+footer.site-foot {
+  background: var(--charcoal);
+  color: var(--parchment);
+  text-align: center;
+  padding: 1.6em 6%;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .site-head .masthead { flex-direction: column; align-items: flex-start; }
+  nav.mainnav ul { gap: 0; }
+  main { padding: 2em 5% 3em; }
+  .hero { min-height: 38vh; }
+}
