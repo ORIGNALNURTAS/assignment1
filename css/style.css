@@ -155,6 +155,19 @@ p { max-width: 68ch; }
 ul, ol { max-width: 68ch; padding-left: 1.4em; }
 li { margin-bottom: 0.35em; }
 
+/* ---------- FAQ (definition list) ---------- */
+dl { max-width: 68ch; }
+dt {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-top: 1em;
+}
+dd {
+  margin: 0.3em 0 0;
+  color: var(--ink);
+}
+
 /* ---------- Hero (home page) ---------- */
 .hero {
   position: relative;
